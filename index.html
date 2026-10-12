@@ -1,100 +1,159 @@
-
+```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OfertaMix Brasil — Ofertas e produtos</title>
-  <meta name="description" content="OfertaMix Brasil: ofertas e produtos selecionados com acesso rápido ao Mercado Livre.">
+
+  <title>OfertaMix Brasil | Ofertas e Produtos Selecionados</title>
+
+  <meta name="description" content="Encontre ofertas e produtos selecionados na OfertaMix Brasil. Confira as oportunidades e acesse os produtos diretamente na loja parceira.">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
   <link rel="canonical" href="https://ofertamixbrasil.online/">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="estilo.css">
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528769790239988"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-<header>
-  <div class="wrap top">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="OfertaMix Brasil">
-      <span>OfertaMix Brasil</span>
-    </a>
-    <form id="searchForm">
-      <input id="search" type="search" placeholder="Buscar ofertas...">
-      <button>Buscar</button>
-    </form>
-    <a class="admin-link" href="admin.html">Painel</a>
-  </div>
-  <nav>
-    <div class="wrap nav">
-      <a href="#ofertas">Ofertas</a>
-      <a href="#categorias">Categorias</a>
-      <a href="quem-somos.html">Quem Somos</a>
-      <a href="contato.html">Contato</a>
+  <header>
+    <div class="wrap top">
+
+      <a class="brand" href="index.html" aria-label="OfertaMix Brasil - Página inicial">
+        <img src="logo.png" alt="Logo OfertaMix Brasil">
+        <span>OfertaMix Brasil</span>
+      </a>
+
+      <form id="searchForm" role="search">
+        <input
+          id="search"
+          type="search"
+          placeholder="Buscar produtos ou código..."
+          aria-label="Buscar produtos ou código"
+        >
+        <button type="submit">Buscar</button>
+      </form>
+
+      <a class="admin-link" href="admin.html">Painel</a>
     </div>
-  </nav>
-</header>
 
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <span class="pill">OFERTAS ONLINE</span>
-      <h1>As melhores ofertas em um só lugar</h1>
-      <p>Uma vitrine simples para você encontrar produtos e seguir para a página da loja parceira.</p>
-      <a class="cta" href="#ofertas">Ver ofertas</a>
+    <nav aria-label="Menu principal">
+      <div class="wrap nav">
+        <a href="index.html">Início</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#categorias">Categorias</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <div>
+        <span class="pill">OFERTAS ONLINE</span>
+
+        <h1>Ofertas que valem a pena estão aqui!</h1>
+
+        <p>
+          Descubra produtos selecionados, compare oportunidades
+          e encontre suas próximas compras em nossas lojas parceiras.
+        </p>
+
+        <a class="cta" href="#ofertas">Explorar ofertas</a>
+      </div>
+
+      <div class="hero-mark" aria-hidden="true">
+        OM
+        <small>BRASIL</small>
+      </div>
+    </section>
+
+    <!-- Publicidade Google AdSense -->
+    <div class="ad" aria-label="Publicidade">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7528769790239988"
+           data-ad-slot="7994559606"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
-    <div class="hero-mark">OM<br><small>BRASIL</small></div>
-  </section>
+    <!-- Fim da publicidade -->
 
-  <!-- ANUNCIO GOOGLE ADSENSE -->
-  <div class="ad" aria-label="Publicidade">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7528769790239988"
-         data-ad-slot="7994559606"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  <!-- FIM DO ANUNCIO -->
+    <section id="categorias">
+      <div class="section-head">
+        <h2>Explore as categorias</h2>
+        <span id="countCat"></span>
+      </div>
 
-  <section id="categorias">
-    <div class="section-head">
-      <h2>Categorias</h2>
-      <span id="countCat"></span>
+      <div id="cats" class="cats"></div>
+    </section>
+
+    <section id="ofertas">
+      <div class="section-head">
+        <h2>Ofertas em destaque</h2>
+        <span id="count"></span>
+      </div>
+
+      <!-- Os produtos continuam sendo carregados pelo app.js -->
+      <div id="products" class="grid">
+        <p>Carregando ofertas...</p>
+      </div>
+    </section>
+
+    <p class="notice">
+      A OfertaMix Brasil apresenta produtos de lojas parceiras.
+      Preços e disponibilidade podem mudar no site do vendedor.
+    </p>
+
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+
+      <div>
+        <strong>OfertaMix Brasil</strong>
+
+        <p>
+          Seu portal de ofertas e produtos selecionados.
+          Encontre oportunidades e visite as lojas parceiras.
+        </p>
+
+        <small>
+          Este portal utiliza links de afiliados. Podemos receber
+          uma comissão por compras elegíveis realizadas por meio
+          desses links, sem custo adicional para o comprador.
+        </small>
+      </div>
+
+      <div>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="contato.html">Contato</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+        <a href="afiliados.html">Divulgação de Afiliados</a>
+      </div>
+
     </div>
-    <div id="cats" class="cats"></div>
-  </section>
 
-  <section id="ofertas">
-    <div class="section-head">
-      <h2>Ofertas</h2>
-      <span id="count"></span>
+    <div class="copy">
+      © 2026 OfertaMix Brasil — Todos os direitos reservados.
     </div>
-    <div id="products" class="grid"></div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="wrap foot">
-    <div>
-      <strong>OfertaMix Brasil</strong>
-      <p>Vitrine de produtos e ofertas com links de afiliados.</p>
-      <small>Alguns links podem gerar comissão quando uma compra elegível é realizada.</small>
-    </div>
-    <div>
-      <a href="privacidade.html">Privacidade</a>
-      <a href="termos.html">Termos</a>
-      <a href="afiliados.html">Divulgação de Afiliados</a>
-    </div>
-  </div>
-  <div class="copy">© 2026 OfertaMix Brasil</div>
-</footer>
-
-<!-- Biblioteca Google AdSense -->
-<script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528769790239988"
-  crossorigin="anonymous"></script>
-
-<script src="app.js"></script>
+  <!-- Script de produtos, busca e categorias -->
+  <script src="app.js"></script>
 </body>
-</html>index.html
+</html>
+```
